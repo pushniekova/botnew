@@ -1,0 +1,145 @@
+import telebot
+from telebot import types
+
+bot = telebot.TeleBot("6201719090:AAHVmrXtpwRTD31h2XZtvF29S8sVr2VTOj8")
+
+# Функція, яка створює клавіатуру для вибору типу роботи
+def get_work_type_keyboard():
+    keyboard = types.InlineKeyboardMarkup()
+    keyboard.row(
+        types.InlineKeyboardButton(text="Курсова робота", callback_data="coursework"),
+        types.InlineKeyboardButton(text="Дипломна робота", callback_data="diploma")
+    )
+    keyboard.row(
+        types.InlineKeyboardButton(text="Реферат", callback_data="abstract"),
+        types.InlineKeyboardButton(text="Магістерська робота", callback_data="master")
+    )
+    keyboard.row(
+        types.InlineKeyboardButton(text="Бакалаврська робота", callback_data="bachelor"),
+        types.InlineKeyboardButton(text="Доповідь", callback_data="report")
+    )
+    keyboard.row(
+        types.InlineKeyboardButton(text="Есе", callback_data="essay"),
+        types.InlineKeyboardButton(text="Стаття", callback_data="article")
+    )
+    keyboard.row(
+        types.InlineKeyboardButton(text="Контрольна робота", callback_data="test"),
+        types.InlineKeyboardButton(text="Відповіді на запитання", callback_data="qa")
+    )
+    keyboard.row(
+        types.InlineKeyboardButton(text="Бізнес план", callback_data="business"),
+        types.InlineKeyboardButton(text="Переклад", callback_data="translation")
+    )
+    keyboard.row(
+        types.InlineKeyboardButton(text="Онлайн допомога на іспиті", callback_data="examhelp"),
+        types.InlineKeyboardButton(text="Звіт з практики", callback_data="practice")
+    )
+    keyboard.row(
+        types.InlineKeyboardButton(text="Лабораторна робота", callback_data="labwork"),
+        types.InlineKeyboardButton(text="Копірайтінг", callback_data="copywriting")
+    )
+    keyboard.row(
+        types.InlineKeyboardButton(text="Рерайтінг", callback_data="rewriting"),
+        types.InlineKeyboardButton(text="Креслення", callback_data="drawing")
+    )
+    keyboard.row(
+        types.InlineKeyboardButton(text="Презентація", callback_data="presentation"),Функція, яка відправляє повідомлення з клавіатурою вибору типу роботи
+def send_work_type_keyboard(message):
+keyboard = get_work_type_keyboard()
+bot.send_message(message.chat.id, "Оберіть тип роботи:", reply_markup=keyboard)
+
+Функція, яка обробляє вибір типу роботи
+@bot.callback_query_handler(func=lambda call: True)
+def handle_work_type_callback(call):
+if call.data == "coursework":
+bot.send_message(call.message.chat.id, "Ви обрали курсову роботу")
+elif call.data == "diploma":
+bot.send_message(call.message.chat.id, "Ви обрали дипломну роботу")
+elif call.data == "abstract":
+bot.send_message(call.message.chat.id, "Ви обрали реферат")
+elif call.data == "master":
+bot.send_message(call.message.chat.id, "Ви обрали магістерську роботу")
+elif call.data == "bachelor":
+bot.send_message(call.message.chat.id, "Ви обрали бакалаврську роботу")
+elif call.data == "report":
+bot.send_message(call.message.chat.id, "Ви обрали доповідь")
+elif call.data == "essay":
+bot.send_message(call.message.chat.id, "Ви обрали есе")
+elif call.data == "article":
+bot.send_message(call.message.chat.id, "Ви обрали статтю")
+elif call.data == "test":
+bot.send_message(call.message.chat.id, "Ви обрали контрольну роботу")
+elif call.data == "qa":
+bot.send_message(call.message.chat.id, "Ви обрали відповіді на запитання")
+elif call.data == "business":
+bot.send_message(call.message.chat.id, "Ви обрали бізнес план")
+elif call.data == "translation":
+bot.send_message(call.message.chat.id, "Ви обрали переклад")
+elif call.data == "examhelp":
+bot.send_message(call.message.chat.id, "Ви обрали онлайн допомогу на іспиті")
+elif call.data == "practice":
+bot.send_message(call.message.chat.id, "Ви обрали звіт з практики")
+elif call.data == "labwork":
+bot.send_message(call.message.chat.id, "Ви обрали лабораторну роботу")
+elif call.data == "copywriting":
+bot.send_message(call.message.chat.id, "Ви обрали копірайтінг")
+elif call.data == "rewriting":
+bot.send_message(call.message.chat.id, "Ви обрали рерайтінг")
+elif call.data == "drawing":
+bot.send_message(call.message.chat.id, "Ви обрали креслення")
+elif call.data == "presentation":
+bot.send_message(call.message.chat.id, "Ви обрали презентацію")
+elif call.data == "homework":
+bot.send_message(call.message.chat.id, "Ви обра
+        types.InlineKeyboardButton(text="Домашнє завдання", callback_data="homework")
+    )
+    keyboard.row(
+        types.Inline
+Функція, яка відправляє повідомлення з клавіатурою вибору типу роботи
+def send_work_type_keyboard(message):
+keyboard = get_work_type_keyboard()
+bot.send_message(message.chat.id, "Оберіть тип роботи:", reply_markup=keyboard)
+
+Функція, яка обробляє вибір типу роботи
+@bot.callback_query_handler(func=lambda call: True)
+def handle_work_type_callback(call):
+if call.data == "coursework":
+bot.send_message(call.message.chat.id, "Ви обрали курсову роботу")
+elif call.data == "diploma":
+bot.send_message(call.message.chat.id, "Ви обрали дипломну роботу")
+elif call.data == "abstract":
+bot.send_message(call.message.chat.id, "Ви обрали реферат")
+elif call.data == "master":
+bot.send_message(call.message.chat.id, "Ви обрали магістерську роботу")
+elif call.data == "bachelor":
+bot.send_message(call.message.chat.id, "Ви обрали бакалаврську роботу")
+elif call.data == "report":
+bot.send_message(call.message.chat.id, "Ви обрали доповідь")
+elif call.data == "essay":
+bot.send_message(call.message.chat.id, "Ви обрали есе")
+elif call.data == "article":
+bot.send_message(call.message.chat.id, "Ви обрали статтю")
+elif call.data == "test":
+bot.send_message(call.message.chat.id, "Ви обрали контрольну роботу")
+elif call.data == "qa":
+bot.send_message(call.message.chat.id, "Ви обрали відповіді на запитання")
+elif call.data == "business":
+bot.send_message(call.message.chat.id, "Ви обрали бізнес план")
+elif call.data == "translation":
+bot.send_message(call.message.chat.id, "Ви обрали переклад")
+elif call.data == "examhelp":
+bot.send_message(call.message.chat.id, "Ви обрали онлайн допомогу на іспиті")
+elif call.data == "practice":
+bot.send_message(call.message.chat.id, "Ви обрали звіт з практики")
+elif call.data == "labwork":
+bot.send_message(call.message.chat.id, "Ви обрали лабораторну роботу")
+elif call.data == "copywriting":
+bot.send_message(call.message.chat.id, "Ви обрали копірайтінг")
+elif call.data == "rewriting":
+bot.send_message(call.message.chat.id, "Ви обрали рерайтінг")
+elif call.data == "drawing":
+bot.send_message(call.message.chat.id, "Ви обрали креслення")
+elif call.data == "presentation":
+bot.send_message(call.message.chat.id, "Ви обрали презентацію")
+elif call.data == "homework":
+bot.send_message(call.message.chat.id, "Ви обра
